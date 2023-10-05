@@ -11,7 +11,7 @@ test_znacheniya = (
 )
 
 
-@pytest.mark.parametrize('radius, time, acceleration, velocity, gradus', test_znacheniya)
+@pytest.mark.parametrize('radius, time, acceleration, velocity, expected', test_znacheniya)
 def test_gradus(radius: float, time: float, acceleration: float, velocity: float, expected: float):
     """Section of code to find of the degree for ball displacement.
 
