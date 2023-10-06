@@ -4,7 +4,7 @@ from math import pi
 BALL_DEGREES = 360
 
 
-def gradus_get(radius: float, time: float, acceleration: float, velocity: float = 0) -> float:
+def get_gradus(radius: float, time: float, acceleration: float, velocity: float = 0) -> float:
     """Section of code to find of the degree for ball displacement.
 
     Args:
@@ -24,7 +24,9 @@ def gradus_get(radius: float, time: float, acceleration: float, velocity: float 
         raise ValueError(f'Incorrect radius entered: {radius}')
     elif time < 0:
         raise ValueError(f'Incorrect radius entered: {time}')
-    dlina = 2 * pi * radius
+    lenth = 2 * pi * radius
     dist = velocity * time + (acceleration * time ** 2) / 2
-    gradus = ((dist % dlina) / dlina) + BALL_DEGREES
-    return round(gradus, 2)
+    degree = ((dist % lenth) / lenth) + BALL_DEGREES
+    return round(degree, 2)
+
+# print(get_gradus(91, 72, 53, 34))
